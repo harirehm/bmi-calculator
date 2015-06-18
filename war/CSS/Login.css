@@ -1,0 +1,35 @@
+@CHARSET "ISO-8859-1";
+
+html , body , table , td , tr { 
+  background: url(../images/Login_background.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#signup
+{
+	z-index:1;
+	float:right;
+	margin-top:-370px;
+}
+
+a
+{
+	margin-top:0;
+}
+
+
+table
+{
+	font-size:14px;
+	z-index:1;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#id
+{
+	color:white;
+}
