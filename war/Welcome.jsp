@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="../CSS/bootstrap.min.css">
 </head>
 <body>    
+	
 	<div class="navbar navbar-inverse navbar-static-top">
 		<div class="container">
 			<div class=" navbar-left navbar-brand">
@@ -36,16 +37,17 @@
 	<a href="../SignUp.jsp">
 		<button type="button" class="btn btn-primary pull-right" style="margin-right:5px">Sign Up</button>
 	</a>
-	<c:if test="${isLoggedIn==false }">
-	<a href="../Login.jsp">
+	<%if((session.getAttribute("isLoggedIn")==null)||((Boolean)session.getAttribute("isLoggedIn")==false))
+		{%>
+		<a href="../Login.jsp">
 		<button type="button" class="btn btn-success pull-right" style="margin-right:5px">Login</button>
 	</a>
-	</c:if>
-	<c:if test="${isLoggedIn==true }">
+	<%}
+	else {%>
 	<a href="/Logout">
 		<button type="button" id="logout" class="btn btn-danger pull-right" style="margin-right:5px">Logout</button>
 	</a>
-	</c:if>
+	<%} %>
 	<br><br><br>
 	<center>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">

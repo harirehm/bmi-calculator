@@ -26,7 +26,7 @@
 			</div>
 			<div class="collapse navbar-collapse navHeaderCollapse" >
 				<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">HOME</a></li>
+						<li><a href="/">HOME</a></li>
 						<li><a href="../Index.jsp">Calculate BMI</a></li>
 						<li><a href="#contact" data-toggle="modal">Contact</a></li>
 				</ul>

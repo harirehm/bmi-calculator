@@ -9,6 +9,12 @@
 	<link rel="stylesheet" href="../CSS/bootstrap.min.css">
 </head>
 <body>    
+	<%if((session.getAttribute("isLoggedIn")==null)|| ((Boolean)session.getAttribute("isLoggedIn")==false)){%>
+	<script>
+          alert("You are not logged in!");
+          window.location = 'Welcome.jsp';
+     </script> 
+     <%} %>
 	<div class="navbar navbar-inverse navbar-static-top">
 		<div class="container">
 			<div class=" navbar-left navbar-brand">

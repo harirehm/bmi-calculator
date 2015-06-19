@@ -1,5 +1,7 @@
 package com.calculations;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.bind.annotation.*;
@@ -9,28 +11,18 @@ import com.valuepack.ValueProvider;
 @Controller
 public class BMIController 
 {
-	boolean isLoggedIn=false;
 	
 	@RequestMapping("/")
 	public ModelAndView welcomeLocator()
 	{
 		ModelAndView model=new ModelAndView("Welcome");
-		model.addObject("isLoggedIn", isLoggedIn);
 		return model;
 	}
 	
 	@RequestMapping("/Index")
 	public ModelAndView enterIndex()
 	{
-		ModelAndView model;
-		if(isLoggedIn)
-		{
-			model=new ModelAndView("Index");
-		}
-		else
-		{
-			model=new ModelAndView("NotLoggedIn");
-		}
+		ModelAndView model=new ModelAndView("Index");
 		return model;
 	}
 	
@@ -78,15 +70,14 @@ public class BMIController
 	}
 
 	@RequestMapping(value="/ValidateLogin", method=RequestMethod.POST)
-	public ModelAndView validateLogin(@RequestParam("uName") String name,@RequestParam("password") String password)
+	public ModelAndView validateLogin(@RequestParam("uName") String name,@RequestParam("password") String password,HttpServletRequest request)
 	{
 		ModelAndView model;
 		BMIModel bmiModel=new BMIModel();
 		if(bmiModel.checkUser(name, password))
 		{
 			model=new ModelAndView("Index");
-			isLoggedIn=true;
-			model.addObject("isLoggedIn",true);
+			request.getSession().setAttribute("isLoggedIn", true);
 		}
 		else
 		{
@@ -97,13 +88,13 @@ public class BMIController
 	}
 	
 	@RequestMapping(value="/AddUsers", method=RequestMethod.POST)
-	public ModelAndView addUsers(@RequestParam("uName") String name,@RequestParam("password") String password)
+	public ModelAndView addUsers(@RequestParam("uName") String name,@RequestParam("password") String password,HttpServletRequest request)
 	{
 		ModelAndView model;
 		if((name!=null)&&(name!=""))
 		{
 			model=new ModelAndView("Success");
-			isLoggedIn=true;
+			request.getSession().setAttribute("isLoggedIn", true);
 			BMIModel bmiModel=new BMIModel();
 			bmiModel.addUsers(name, password);
 		}
@@ -113,11 +104,10 @@ public class BMIController
 	}
 	
 	@RequestMapping("/Logout")
-	public ModelAndView logout()
+	public ModelAndView logout(HttpServletRequest request)
 	{
 		ModelAndView model=new ModelAndView("Welcome");
-		isLoggedIn=false;
-		model.addObject("isLoggedIn", isLoggedIn);
+		request.getSession().setAttribute("isLoggedIn", false);
 		return model;	
 	}
 	
