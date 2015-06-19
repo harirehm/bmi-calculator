@@ -1,15 +1,5 @@
 package com.calculations;
 
-import java.util.Properties;
-
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.bind.annotation.*;
@@ -134,14 +124,7 @@ public class BMIController
 	@RequestMapping("/MailSend")
 	public ModelAndView sendMail(@RequestParam(value="name") String name,@RequestParam(value="email") String email,@RequestParam(value="msg") String msg)
 	{
-		ModelAndView model;
-		if((name!="")&&(email!="")&&(msg!=""))
-		{
-			model=new ModelAndView("MailSent");
-		}
-		else
-			model=new ModelAndView("BlankEntries");
-		
+		ModelAndView model=new ModelAndView("MailSent");
 		return model;
 	}
 	

@@ -50,19 +50,19 @@
 						<div class="form-group">
 							<label for="usrname" class="control-label col-lg-2">Name</label>
 							<div class="col-lg-10">
-								<input type="text" class="form-control" id="usrname" placeholder="Full name" name="name">
+								<input type="text" class="form-control" id="usrname" placeholder="Full name" name="name" required>
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="email" class="control-label col-lg-2">E-mail</label>
 							<div class="col-lg-10">
-								<input type="email" class="form-control" id="email" placeholder="you@yourdomain.com" name="email">
+								<input type="email" class="form-control" id="email" placeholder="you@yourdomain.com" name="email" required>
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="msg" class="control-label col-lg-2">Message</label>
 								<div class="col-lg-10">
-									<textarea rows="8" id="msg" name="msg" class="form-control" placeholder="Your Message"></textarea>
+									<textarea rows="8" id="msg" name="msg" class="form-control" placeholder="Your Message" required></textarea>
 								</div>					
 						</div>
 						<div class="form-group">

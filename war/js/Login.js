@@ -3,7 +3,7 @@
  */
 
 $(document).ready(function(){
-	var clicked=false;
+    var clicked=false;
 	var $height=$(window).height();
 	var $width=$(window).width();
 	var tbHeight=Math.floor($height/2.6);

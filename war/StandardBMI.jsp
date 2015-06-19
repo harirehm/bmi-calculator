@@ -36,21 +36,22 @@
 		<button style="margin-right:5px" class="btn btn-danger pull-right">Log out</button>
 	</a>
 	<br>
-	<form style="margin: 20px"action="/StandardBMICalculator" class="form-horizontal">
+	<form style="margin: 20px; clear:both" id="main-form" action="/StandardBMICalculator" class="form-horizontal">
 		<div class="form-group">
-			<label for="hieght" class="control-label col-lg-2">Height</label>
-			<div class="col-lg-5">
+			<label for="hieght" class="control-label col-sm-offset-2 col-sm-2">Height</label>
+			<div class="col-sm-2">
 			<input id="height" name="feet" type="text" class=" form-control" placeholder="Feet"></div>
-		<div class="col-lg-5">
+		<div id="add-form-br"></div>
+		<div class="col-sm-2">
 			<input id="height" name="inch" type="text" class=" form-control" placeholder="Inch"></div>
 		</div>
 		<div class="form-group">
-			<label for="weight" class="control-label col-lg-2">Weight</label>
-			<div class="col-lg-10">
+			<label for="weight" class="control-label col-sm-offset-2 col-sm-2">Weight</label>
+			<div class="col-sm-4">
 			<input id="weight" name="weight" type="text" class=" form-control" placeholder="Weight in kg"></div>
 		</div>
 		<div class="form-group">
-            <div class="col-xs-offset-2 col-xs-10">
+            <div class="col-sm-offset-4 col-sm-8">
                 <button type="submit" class="btn btn-primary">Calculate BMI</button>
             </div>
         </div>
@@ -68,19 +69,19 @@
 						<div class="form-group">
 							<label for="usrname" class="control-label col-lg-2">Name</label>
 							<div class="col-lg-10">
-								<input type="text" class="form-control" id="usrname" placeholder="Full name" name="name">
+								<input type="text" class="form-control" id="usrname" placeholder="Full name" name="name" required>
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="email" class="control-label col-lg-2">E-mail</label>
 							<div class="col-lg-10">
-								<input type="email" class="form-control" id="email" placeholder="you@yourdomain.com" name="email">
+								<input type="email" class="form-control" id="email" placeholder="you@yourdomain.com" name="email" required>
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="msg" class="control-label col-lg-2">Message</label>
 								<div class="col-lg-10">
-									<textarea rows="8" id="msg" name="msg" class="form-control" placeholder="Your Message"></textarea>
+									<textarea rows="8" id="msg" name="msg" class="form-control" placeholder="Your Message" required></textarea>
 								</div>					
 						</div>
 						<div class="form-group">
@@ -96,5 +97,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../js/AddBr.js"></script>
+	<script type="text/javascript" src="../js/FormAlligner.js"></script>
 </body>
 </html>
