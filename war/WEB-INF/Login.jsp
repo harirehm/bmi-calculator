@@ -3,11 +3,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+	<link rel="stylesheet" href="../CSS/Login.css">
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Welcome</title>
+	<title>Login</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../CSS/bootstrap.min.css">
-	<link rel="stylesheet" href="../CSS/Login.css">
 </head>
 <body>    
 	<div class="navbar navbar-inverse navbar-static-top">
