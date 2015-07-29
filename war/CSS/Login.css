@@ -7,3 +7,14 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
+
+#forgotPassword
+{
+	color: #4863A0;
+	text-decoration: underline;
+}
+
+#forgotPassword:hover
+{
+	text-decoration: none;
+}
