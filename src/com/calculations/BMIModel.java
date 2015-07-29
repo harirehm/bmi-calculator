@@ -1,19 +1,42 @@
 package com.calculations;
 
-import java.util.*;
+import com.google.appengine.api.datastore.DatastoreServiceFactory;
+import com.google.appengine.api.datastore.DatastoreService;
+import com.google.appengine.api.datastore.Query;
+import com.google.appengine.api.datastore.PreparedQuery;
+import com.google.appengine.api.datastore.Entity;
+
 
 public class BMIModel 
 {
-	static 	HashMap<String, String> map=new HashMap<String,String>();
-
 	void addUsers(String name,String password)
 	{
-		map.put(name, password);
+		DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+		Entity users = new Entity("Users");		
+		users.setProperty("Name", name);
+		users.setProperty("Password", password);
+		datastore.put(users);
 	}
 	
 	boolean checkUser(String name,String password)
 	{
+		DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+		Query query = new Query("Users");
+		PreparedQuery preparedQuery = datastore.prepare(query);
+
 		boolean isUserPresent=false;
+
+		for(Entity users : preparedQuery.asIterable())
+		{
+			  String lname = (String) users.getProperty("Name");
+			  String lpassword = (String) users.getProperty("Password");
+			  if((lname.equalsIgnoreCase(name))&&(lpassword.equalsIgnoreCase(password)))
+				  isUserPresent=true;
+		}
+		
+		/*
+		
+		
 		Set<String> set=map.keySet();
 		for(String str:set)
 		{
@@ -25,7 +48,7 @@ public class BMIModel
 					break;
 				}
 			}
-		}
+		}*/
 		return isUserPresent;
 	}
 }
