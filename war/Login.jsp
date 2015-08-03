@@ -41,7 +41,7 @@
 	<div class="modal-dialog " stdyle="clear:both">
 			<div style="background-color: rgba(255,255,255,0.2);" class="modal-content">
 				<div  class="modal-header" >
-					<h4><b>Create an account</b></h4>
+					<h4><b>Login</b></h4>
 				</div>
 				<div class="modal-body">
 					<form class="form-horizontal" action="/ValidateLogin" method="post" >
@@ -58,13 +58,6 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<a href="#triggerForgotPassword" data-toggle="modal">
-								<div class="col-sm-offset-2 col-sm-10">
-									<b><i id="forgotPassword">Forgot password</i></b>
-								</div>
-							</a>
-						</div>
-						<div class="form-group">
 				            <div class="col-sm-offset-2 col-sm-10">
 				                <button type="submit" class="btn btn-primary">Login</button>
 				            </div>
@@ -73,31 +66,7 @@
 				</div>
 			</div>				
 		</div>
-		
-		 <div class="modal fade" id="triggerForgotPassword">
-		<div class="modal-dialog" >
-			<div class="modal-content">
-				<div class="modal-header" >
-					<h4><b>Forgot password</b></h4>
-				</div>
-				<div class="modal-body">
-					<form class="form-horizontal" action="/MailSend" >
-						<div class="form-group">
-							<label for="usrname" class="control-label col-lg-2">Email ID</label>
-							<div class="col-lg-10">
-								<input type="text" class="form-control" id="usrname" placeholder="We will email password to this registered email address" name="name" required>
-							</div>
-						</div>
-						<div class="form-group">
-							<button type="submit" class="btn btn-primary pull-right" style="margin-right:5px">Send</button>
-							<button type="button" class="btn btn-default pull-right"  style="margin-right:5px" data-dismiss="modal">Cancel</button>
-						</div>
-					</form>
-				</div>
-			</div>				
-		</div>
-	</div>
-	
+			
 	  <div class="modal fade" id="contact">
 		<div class="modal-dialog" >
 			<div class="modal-content">
