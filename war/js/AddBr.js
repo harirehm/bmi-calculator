@@ -29,7 +29,7 @@ $(document).ready(function(){
 	
 	$(window).resize(function(){
 		var window_width=$(window).width();
-		if(window_width>767)
+		if(window_width>750)
 		{
 			$('#add-br').empty();
 			brAdded=false;
